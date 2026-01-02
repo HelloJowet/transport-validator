@@ -24,7 +24,7 @@ env_logger = { version = "0.11", optional = true }
 anyhow = "1"
 futures = { version = "0.3", optional = true }
 geo = "0.28"
-gtfs-structures = { version = "0.46.1", default-features = false }
+gtfs-structures = { git = "https://github.com/HelloJowet/gtfs-structure.git", branch = "feat/clonable_structs" }
 iso4217 = "0.3"
 isolang = "2.1"
 itertools = "0.13"

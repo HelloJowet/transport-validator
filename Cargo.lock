@@ -1042,8 +1042,7 @@ checksum = "4271d37baee1b8c7e4b708028c57d816cf9d2434acb33a549475f78c181f6253"
 [[package]]
 name = "gtfs-structures"
 version = "0.46.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a30ae056e8c50a1a7952125c20ddb9ee34db307e6cd791c354366d2ae89ffbb"
+source = "git+https://github.com/HelloJowet/gtfs-structure.git?branch=feat%2Fclonable_structs#96d0f5bd8da7ffad230d479bcb323ba318cd12f9"
 dependencies = [
  "bytes",
  "chrono",
