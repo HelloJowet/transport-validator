@@ -6,7 +6,7 @@ use rgb::RGB;
 use serde::Serialize;
 use std::collections::HashMap;
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize, Debug, Default)]
 pub struct Metadata {
     pub start_date: Option<String>,
     pub end_date: Option<String>,
