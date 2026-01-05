@@ -30,7 +30,7 @@ pub struct Metadata {
     pub stats: Stats,
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize, Debug, Default)]
 pub struct Stats {
     pub stops_count: usize,
     pub stop_areas_count: usize,
