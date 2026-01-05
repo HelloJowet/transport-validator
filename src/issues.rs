@@ -2,12 +2,12 @@
 use crate::visualization;
 use geojson::FeatureCollection;
 use gtfs_structures::Gtfs;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 /// Represents the severity of an [`Issue`].
 ///
 /// [`Issue`]: struct.Issue.html
-#[derive(Serialize, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Copy, Clone)]
+#[derive(Serialize, Deserialize, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Copy, Clone)]
 pub enum Severity {
     /// Critical error, the GTFS archive couldn't be opened.
     Fatal,
@@ -20,7 +20,7 @@ pub enum Severity {
 }
 
 /// Represents the different types of issue.
-#[derive(Serialize, Debug, Eq, PartialEq, Ord, PartialOrd, Clone, Hash, Copy)]
+#[derive(Serialize, Deserialize, Debug, Eq, PartialEq, Ord, PartialOrd, Clone, Hash, Copy)]
 pub enum IssueType {
     /// A stop is not used.
     UnusedStop,
@@ -106,7 +106,7 @@ pub enum IssueType {
 }
 
 /// Represents an object related to another object that is causing an issue.
-#[derive(Serialize, Debug, Eq, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 pub struct RelatedObject {
     /// Related object's id.
     pub id: String,
@@ -119,7 +119,7 @@ pub struct RelatedObject {
 }
 
 /// Represent a line that is causing an issue
-#[derive(Serialize, Debug, Eq, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 pub struct RelatedLine {
     /// line number
     pub line_number: u64,
@@ -130,7 +130,7 @@ pub struct RelatedLine {
 }
 
 /// Represent a file that is causing an issue
-#[derive(Serialize, Debug, Eq, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 pub struct RelatedFile {
     /// File name.
     pub file_name: String,
@@ -140,7 +140,7 @@ pub struct RelatedFile {
 }
 
 /// Represents an issue.
-#[derive(Serialize, Debug, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, PartialEq)]
 pub struct Issue {
     /// Issue severity.
     pub severity: Severity,
