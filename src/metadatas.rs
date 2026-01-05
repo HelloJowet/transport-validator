@@ -262,7 +262,7 @@ fn stops_with_wheelchair_info_count(gtfs: &gtfs_structures::Gtfs) -> usize {
         .count()
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Interval {
     start_date: chrono::NaiveDate,
     end_date: chrono::NaiveDate,
