@@ -3,10 +3,10 @@ use chrono::NaiveDate;
 use gtfs_structures::{Availability, Error};
 use itertools::Itertools;
 use rgb::RGB;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
-#[derive(Serialize, Debug, Default)]
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Metadata {
     pub start_date: Option<String>,
     pub end_date: Option<String>,
@@ -30,7 +30,7 @@ pub struct Metadata {
     pub stats: Stats,
 }
 
-#[derive(Serialize, Debug, Default)]
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Stats {
     pub stops_count: usize,
     pub stop_areas_count: usize,
